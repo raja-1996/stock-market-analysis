@@ -1,6 +1,14 @@
+---
+name: macro-economy
+description: Analyze macroeconomic landscape including GDP, inflation, Fed policy, employment, and global factors. Use when the user asks about economy, macro outlook, interest rates, inflation, jobs data, or overall market conditions.
+allowed-tools: WebSearch, WebFetch, Read, Write, Bash, Glob, Grep
+---
+
 # Macro Economy Analysis
 
 Research and analyze the macroeconomic landscape from the last 7 days. Use web search to find the latest data and news.
+
+Today's date: !`date +%Y-%m-%d`
 
 ## Research Checklist
 Investigate each of the following areas by searching for recent news and data:
@@ -42,39 +50,12 @@ Investigate each of the following areas by searching for recent news and data:
 - Currency movements (DXY, major pairs)
 - Commodity prices (oil, gold, copper)
 
-## Output Format
+## Scoring Reference
+Use the scoring framework from CLAUDE.md:
+- **Signal Strength** (1-5): 5=Very Strong, 4=Strong, 3=Moderate, 2=Weak, 1=Speculative
+- **Risk Rating**: Low / Medium / High / Very High
 
-```markdown
-# Macro Economy Report — [Date Range]
-
-## Executive Summary
-[3-5 bullet points on the most important macro developments]
-
-## GDP & Growth Outlook
-[Findings with sources and dates]
-
-## Inflation Tracker
-[Current readings, trend direction, and implications]
-
-## Fed & Interest Rates
-[Policy stance, market expectations, key quotes]
-
-## Labor Market
-[Latest data, trends, and outlook]
-
-## Consumer & Business Sentiment
-[Survey data, spending trends]
-
-## Global Macro
-[International developments affecting US markets]
-
-## Market Implications
-- **Bullish factors**: [list]
-- **Bearish factors**: [list]
-- **Key risks to watch**: [list]
-
-## Sources
-[Numbered list of all sources cited]
-```
+## Output Template
+Follow the template in `.claude/skills/macro-economy/template.md`
 
 Save the report to: `reports/YYYY-MM-DD-macro-economy.md`

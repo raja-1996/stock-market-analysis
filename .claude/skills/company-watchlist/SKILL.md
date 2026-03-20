@@ -1,6 +1,14 @@
+---
+name: company-watchlist
+description: Screen and identify companies showing early interesting signals worth monitoring. Use when the user asks about interesting stocks, companies to watch, earnings movers, insider buying, analyst upgrades, or wants a broad market scan for notable activity.
+allowed-tools: WebSearch, WebFetch, Read, Write, Bash, Glob, Grep
+---
+
 # Company Watchlist Screening
 
 Research and identify companies showing early interesting signals from the last 7 days. These are NOT buy/sell calls — they are names worth monitoring for developing situations. Use web search to find latest company news and data.
+
+Today's date: !`date +%Y-%m-%d`
 
 ## Research Checklist
 
@@ -44,37 +52,11 @@ A company makes the watchlist if it has:
 - At least 2 signals from different categories above, OR
 - 1 very strong signal (Signal Strength 4-5)
 
-## Output Format
+## Scoring Reference
+- **Signal Strength** (1-5): 5=Very Strong, 4=Strong, 3=Moderate, 2=Weak, 1=Speculative
+- **Risk Rating**: Low / Medium / High / Very High
 
-```markdown
-# Company Watchlist — [Date Range]
-
-## Executive Summary
-[Number of companies screened, key themes emerging]
-
-## Watchlist
-
-### [Company Name] ($TICKER) — [Sector]
-- **Signal Strength**: [1-5] | **Risk**: [Low/Med/High/Very High]
-- **Why it's on the list**: [1-2 sentence summary]
-- **Signals detected**:
-  - [Signal 1 with source and date]
-  - [Signal 2 with source and date]
-- **What to watch next**: [upcoming catalyst or confirmation needed]
-- **Bull case**: [brief]
-- **Bear case**: [brief]
-
----
-
-[Repeat for each company]
-
-## Watchlist Summary Table
-
-| Ticker | Company | Sector | Signal Strength | Key Signal | Next Catalyst |
-|--------|---------|--------|----------------|------------|---------------|
-
-## Sources
-[Numbered list of all sources cited]
-```
+## Output Template
+Follow the template in `.claude/skills/company-watchlist/template.md`
 
 Save the report to: `reports/YYYY-MM-DD-company-watchlist.md`

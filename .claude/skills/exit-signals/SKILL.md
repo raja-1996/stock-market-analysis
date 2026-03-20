@@ -1,6 +1,17 @@
+---
+name: exit-signals
+description: Identify companies showing clear warning signs, red flags, and deteriorating conditions. Use when the user asks about stocks to sell, avoid, or reduce, companies with problems, red flags, bearish setups, or risk warnings.
+allowed-tools: WebSearch, WebFetch, Read, Write, Bash, Glob, Grep
+---
+
 # Exit Signals Analysis
 
 Research and identify companies showing clear warning signs and deteriorating conditions from the last 7 days. These are companies where holders should consider reducing or exiting positions. Use web search to find latest data and news.
+
+Today's date: !`date +%Y-%m-%d`
+
+## Pre-Check
+Before starting, read any existing reports in `reports/` directory from this week for context.
 
 ## Research Checklist
 
@@ -55,66 +66,12 @@ A company qualifies as an "Exit Signal" if it has:
 - At least 1 confirmed red flag or catalyst for further decline
 - Technical picture bearish
 
-## Output Format
-
-```markdown
-# Exit Signals Report — [Date Range]
-
-## Executive Summary
-[How many exit signals identified, common themes, severity assessment]
-
-## Warning Level Guide
+## Warning Level Classification
 - **URGENT**: Multiple severe red flags, immediate review recommended
 - **HIGH**: Strong deterioration signals, consider reducing position
 - **MODERATE**: Early warning signs developing, monitor closely
 
-## Exit Signal #1: [Company Name] ($TICKER)
-
-### Overview
-| Metric | Value |
-|--------|-------|
-| Sector | [sector] |
-| Market Cap | [$] |
-| Warning Level | [URGENT/HIGH/MODERATE] |
-| Signal Strength | [4-5] |
-
-### Why Exit / Reduce
-[2-3 paragraph explanation of the deteriorating situation]
-
-### Red Flags Identified
-1. [Red flag with source and date]
-2. [Red flag with source and date]
-3. [Red flag with source and date]
-
-### Fundamental Deterioration
-- [Metric declining 1]
-- [Metric declining 2]
-
-### Smart Money Activity
-[Insider selling, institutional exits, analyst downgrades]
-
-### Technical Damage
-[Price action, broken support levels, volume patterns]
-
-### Counter-Argument (Bull Case)
-[Fair representation of why someone might stay — turnaround potential, oversold bounce, etc.]
-
-### Downside Risk: $[X] ([Y]% further downside if deterioration continues)
-
----
-
-[Repeat for each company]
-
-## Exit Signals Summary Table
-
-| Rank | Ticker | Company | Warning Level | Key Red Flag | Downside Risk |
-|------|--------|---------|--------------|-------------|---------------|
-
-## Risk Disclaimer
-This analysis is for educational purposes only. These are not sell recommendations. Always perform your own due diligence, consider tax implications, and consult a financial advisor before making changes to your portfolio.
-
-## Sources
-[Numbered list of all sources cited]
-```
+## Output Template
+Follow the template in `.claude/skills/exit-signals/template.md`
 
 Save the report to: `reports/YYYY-MM-DD-exit-signals.md`

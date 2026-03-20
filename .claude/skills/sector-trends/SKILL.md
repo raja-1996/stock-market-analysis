@@ -1,6 +1,14 @@
+---
+name: sector-trends
+description: Analyze sector performance, rotation patterns, and thematic trends across all 11 GICS sectors. Use when the user asks about sectors, industry performance, sector rotation, which sectors are hot or cold, or thematic investing trends.
+allowed-tools: WebSearch, WebFetch, Read, Write, Bash, Glob, Grep
+---
+
 # Sector Trends Analysis
 
 Research and analyze sector-level performance and rotation trends from the last 7 days. Use web search to find latest sector data and news.
+
+Today's date: !`date +%Y-%m-%d`
 
 ## Research Checklist
 
@@ -45,45 +53,7 @@ For each notable sector, identify:
 - Leveraged/inverse ETF activity (sentiment indicator)
 - New ETF launches or closures in specific themes
 
-## Output Format
-
-```markdown
-# Sector Trends Report — [Date Range]
-
-## Executive Summary
-[3-5 bullet points on most important sector developments]
-
-## Sector Performance Heatmap
-
-| Sector | Weekly Return | Trend | Signal |
-|--------|-------------|-------|--------|
-| [Sector] | [%] | [Up/Down/Flat] | [Bullish/Bearish/Neutral] |
-
-## Top Performing Sectors
-### [Sector Name]
-- **Performance**: [data]
-- **Key drivers**: [catalysts]
-- **Outlook**: [forward view]
-
-## Worst Performing Sectors
-### [Sector Name]
-- **Performance**: [data]
-- **Key drivers**: [catalysts]
-- **Outlook**: [forward view]
-
-## Sector Rotation Analysis
-[Where is money flowing? Risk-on or risk-off? Cycle positioning]
-
-## Thematic Trends
-[Major themes gaining/losing momentum]
-
-## Actionable Sector Views
-- **Overweight**: [sectors and why]
-- **Underweight**: [sectors and why]
-- **Watch**: [sectors at inflection points]
-
-## Sources
-[Numbered list of all sources cited]
-```
+## Output Template
+Follow the template in `.claude/skills/sector-trends/template.md`
 
 Save the report to: `reports/YYYY-MM-DD-sector-trends.md`
